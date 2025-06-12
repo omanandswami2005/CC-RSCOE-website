@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glassmorphism {
+    /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.03);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(8, 8, 8, 0.285);
+  backdrop-filter: blur(1.8px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 0.2px solid rgba(255, 255, 255, 0.1);
+  }
+  
