@@ -1,11 +1,11 @@
-
 import LandingSection from '../Components/LandingSection.jsx';
 import AboutPage from '../Components/AboutPage.jsx';
 import Footer from '../Components/Footer.jsx';
 import PricingSection from '../Components/PricingSection.jsx';
-import FAQs from '../Components/FAQs.jsx';
-import Timeline from '../Components/Timeline.jsx';
-import Teams from '../Components/Teams.jsx';
+import DynamicFAQs from '../Components/DynamicFAQs.jsx';
+import DynamicTimeline from '../Components/DynamicTimeline.jsx';
+import DynamicTestimonials from '../Components/DynamicTestimonials.jsx';
+import AchievementsSection from '../Components/AchievementsSection.jsx';
 import Discord from '../Components/Discord.jsx';
 
 function LandingPage() {
@@ -18,10 +18,13 @@ function LandingPage() {
         <AboutPage />
       </div>
       <div id="teams">
-        <Teams />
+        <DynamicTestimonials />
+      </div>
+      <div id="achievements">
+        <AchievementsSection />
       </div>
       <div id="timeline">
-        <Timeline />
+        <DynamicTimeline />
       </div>
       <div id="pricing">
         <PricingSection />
@@ -30,7 +33,7 @@ function LandingPage() {
         <Discord />
       </div>
       <div id="faqs">
-        <FAQs />
+        <DynamicFAQs />
       </div>
       <Footer />
     </>

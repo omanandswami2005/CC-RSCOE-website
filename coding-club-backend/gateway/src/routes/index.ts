@@ -1,7 +1,7 @@
 import express from "express";
 import proxy from "express-http-proxy";
 import config from "../config/env";
-import { logInfo, logError } from "../utils/logger"; // Import logger
+import { logInfo, logError } from "../utils/logger";
 
 const router = express.Router();
 
@@ -28,7 +28,6 @@ router.use(
 // Proxy requests to the User Service
 router.use("/api/user", proxy(config.USER_SERVICE_URL, {
   proxyReqPathResolver: (req) => {
-    console.log("Proxying User Request:", req.url);
     const resolvedPath = "/user" + req.url;
     logInfo(`🔀 Proxying User Request: ${req.originalUrl} → ${resolvedPath}`);
     return resolvedPath;
@@ -49,6 +48,15 @@ router.use("/api/general", proxy(config.USER_SERVICE_URL, {
   proxyReqPathResolver: (req) => {
     const resolvedPath = "/general" + req.url;
     logInfo(`🔀 Proxying General Subscription Request: ${req.originalUrl} → ${resolvedPath}`);
+    return resolvedPath;
+  }
+}));
+
+// Proxy requests to Content Service
+router.use("/api/content", proxy("http://localhost:5003", {
+  proxyReqPathResolver: (req) => {
+    const resolvedPath = req.url;
+    logInfo(`🔀 Proxying Content Request: ${req.originalUrl} → ${resolvedPath}`);
     return resolvedPath;
   }
 }));

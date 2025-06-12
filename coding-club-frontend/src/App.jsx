@@ -16,7 +16,7 @@ import MemberManagement from "./Pages/MemberManagement";
 import Teams from "./Pages/Teams";
 import ProfilePage from "./Pages/ProfilePage";
 import Navbar from "./Components/Navbar";
-// import EventPage from "./Pages/EventPage";
+import AdminContentManagement from "./Components/AdminContentManagement";
 import { useSession } from "./lib/auth-client";
 import AdminDashboard from "./Pages/AdminDashboard";
 import TeamManagement from "./Pages/TeamManagement";
@@ -150,6 +150,14 @@ function AppContent() {
             element={
               <AdminRoute>
                 <AdminDashboard />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="/admin/content"
+            element={
+              <AdminRoute>
+                <AdminContentManagement />
               </AdminRoute>
             }
           />
